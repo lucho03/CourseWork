@@ -154,7 +154,7 @@ void loop() {
       lcd.setCursor(14, 1);
       lcd.print(exercises);
 
-      x = analogRead(0);
+      x = analogRead(BUTTONS);
       if(x > 600 and x < 800) {
         lcd.clear();
         lcd.setCursor(0, 0);
@@ -166,7 +166,7 @@ void loop() {
         lcd.setCursor(0, 1);
         lcd.print("Left:NO Up:YES");
         while(1) {
-          x = analogRead(0);
+          x = analogRead(BUTTONS);
           if(x > 60 and x < 200) {
             exercises = 0;
             last_angle_X = -100;
